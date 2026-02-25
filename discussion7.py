@@ -105,6 +105,9 @@ def write_summary_csv(out_filename, avg_prices):
     with open(out_filename, "w", newline = "") as file:
         writer = csv.writer(file)
         writer.writerow(['neighbourhood_group', 'room_type', 'average_price'])
+    for key in avg_prices:
+        group, room = key
+        writer.writerow([group,room, avg_prices[key]])
 
 ###############################################################################
 ##### UNIT TESTS (Do not modify the code below!)
